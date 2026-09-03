@@ -1,0 +1,269 @@
+.app {
+  min-height: 100svh;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px 40px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mascot {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  flex-shrink: 0;
+  mix-blend-mode: multiply;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.mute {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.mute.is-muted {
+  background: #f3e6d0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.sidebar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px 18px 18px;
+  box-shadow: var(--shadow);
+}
+
+.sidebar h2 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.add-row input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.add-row button,
+.result button,
+.ghost,
+.primary {
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.add-row button,
+.result button {
+  background: var(--sky);
+  color: #083047;
+  font-weight: 650;
+}
+
+.add-error {
+  margin: 8px 0 0;
+  color: #b14732;
+  font-size: 0.85rem;
+}
+
+.name-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.name-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1e6d6;
+}
+
+.name-list li > div {
+  display: grid;
+  gap: 2px;
+}
+
+.sitout-tag {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: left;
+  text-decoration: underline;
+}
+
+.name-list li > button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 8px;
+  background: #f3e6d0;
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.hint {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 640px;
+  overflow: hidden;
+}
+
+.wheel-stage {
+  position: relative;
+  width: min(520px, 92vw);
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 28px solid #c9894a;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
+}
+
+.wheel-rotate {
+  transform-origin: center;
+  will-change: transform;
+}
+
+.wheel-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 24px rgba(80, 58, 32, 0.12));
+}
+
+.mod-chip {
+  margin: 18px 0 0;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.mod-chip.placeholder {
+  color: var(--muted);
+}
+
+.result {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.result code {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.primary {
+  background: var(--sky-deep);
+  color: #fff;
+  padding: 12px 22px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 12px;
+}
+
+.ghost {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 12px 18px;
+  font-weight: 650;
+}
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .mascot {
+    width: 68px;
+    height: 68px;
+  }
+}
